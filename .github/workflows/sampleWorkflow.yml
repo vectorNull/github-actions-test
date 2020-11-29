@@ -19,6 +19,8 @@ jobs:
 
     run-windows-commands:
         runs-on: windows-latest
+        # Allows for serialized execution of jobs or deals with dependencies
+        needs: ["run-shell-command"]
         steps:
             - name: Directory Powershell
               run: Get-Location
