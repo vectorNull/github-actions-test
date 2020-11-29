@@ -6,6 +6,19 @@ jobs:
     run-github-actions:
         runs-on: ubuntu-20.04
         steps:
+            - name: List Files Before Checkout action
+              run: |
+                pwd
+                ls -a
+
+            - name: Run Checkout action
+              uses: actions/checkout@v2
+            
+            - name: List Files After Checkout action
+              run: |
+                pwd 
+                ls -la
+            
             - name: Simple JS Action
               id: greet
               uses: actions/hello-world-javascript-action@v1 # or you can use a commit id to reference an action
