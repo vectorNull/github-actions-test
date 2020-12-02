@@ -1,8 +1,10 @@
 name: Actions Workflow
 
 on: 
-    pull_request:
-      types: [closed]
+    repository_dispatch:
+        types: [test]
+    # pull_request:
+    #   types: [closed]
 
 jobs:
     run-github-actions:
