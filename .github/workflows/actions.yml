@@ -1,10 +1,29 @@
 name: Actions Workflow
 
 on: 
+    # Postman POST request made to https://api.github.com/repos/<owner>/<repo>/dispatches
+    # Must use a github token - personal settings -> Developer settings -> Personal Access Tokens -> Generate a new Token -> Select repo and workflow scopes
+    # Authentication: basic auth with token only
+    # Headers
+      # - Accept: application/vnd.github.v3+json
+      # - Content-Type: application/json
     repository_dispatch:
       types: [build]
+    
     # pull_request:
     #   types: [closed]
+
+    # push:
+    #     branches:
+    #         - master
+    #         - 'feature/*' # matches feature/featureA, feature/featureB, but not feature/feat/A; pattern does not take foward slashes into account
+    #         - 'feature/**' # matches any string pattern
+    #         - '!feature/featC'  #Ignores a specific pattern
+
+    #     branches-ignore: # matches all patterns except the ones defined here
+    #     tags:
+
+
 
 jobs:
     run-github-actions:
