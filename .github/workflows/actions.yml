@@ -35,4 +35,4 @@ jobs:
 
             - name: Log Greeting Time
               run: echo "${{ steps.greet.outputs.time }}"
-                   echo $GITHUB_REPOSITORY
+                   
